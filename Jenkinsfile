@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'mcr.microsoft.com/playwright:v1.43.1-jammy'
-      args '-v $WORKSPACE:/app -w /app'
+      args '--workdir /app -v ${env.WORKSPACE}:/app'
     }
   }
   stages {
